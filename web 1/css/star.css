@@ -1,0 +1,580 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+}
+p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	color: #666666;
+	line-height: 30px;
+}
+a {
+	text-decoration: none!important;
+}
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+:root{
+  --green:#a4c639;
+  --gray:#343434;
+  --dahrk:#1e1e1e;
+  --black:#232323;
+
+}
+.countainer{
+  width: 100%;
+  overflow-x: hidden;
+}
+/*************** top **********/
+.top{
+  width: 100%;
+  height: 40px;
+  background-color: var(--green);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 5;
+}
+.top ul{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.top ul li{
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  cursor: pointer;
+}
+.top ul li:hover{
+  transform: scale(1.2);
+  color: var(--gray);
+}
+.top ul li span{
+  margin-left: 5px;
+}
+@media (max-width:440px){
+  .top{
+    display: none;
+  }
+}
+/*************** haeder **********/
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px;
+  color: #fff;
+  z-index: 10;
+  top: 20px;
+ position: fixed;
+}
+header nav{
+  flex-grow: 0.3;
+  transition: 0.3s;
+}
+header nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+header ul li{
+  font-size: large;
+  position: relative;
+}
+header ul li:hover::before{
+  visibility: visible;
+}
+header ul li::before{
+  transition: all 0.3s;
+  visibility: hidden;
+  position: absolute;
+  content: '';
+  bottom:-10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--green);
+}
+header ul li a{
+  color: #fff;
+}
+header .menu{
+  cursor: pointer;
+  width: 40px;
+  height: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header .menu span{
+  background-color: var(--green);
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+header .menu.click{
+  position: relative;
+}
+header .menu.click>span{
+  position: absolute;
+}
+header .menu.click :nth-child(1){
+  display: none;
+}
+header .menu.click :nth-child(2){
+  transform: rotate(45deg);
+}
+header .menu.click :nth-child(3){
+  transform: rotate(-45deg);
+}
+@media (max-width:730px){
+  header nav{
+    display: none;
+    position: relative;
+    transition: all 0.5s;
+  }
+  header nav ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header nav ul li{
+    margin-top: 10px;
+  }
+  header .menu{
+    display: flex;
+  }
+}
+/*************** home  **********/
+.slider{
+  padding-top: 50px;
+  margin-top:-60px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.slider .blok{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px;
+ 
+}
+.slider .blok.tow{
+  z-index: 2;
+}
+.slider .blok .content{
+  width: 60%;
+}
+.slider .blok .content h2{
+  color: var(--green);
+}
+.slider .blok .content h1,
+.slider .blok .content p{
+  color: #fff;
+  margin-top: 20px;
+}
+.slider .blok .content button{
+  cursor: pointer;
+}
+.slider .blok .content button:hover{
+  background-color: #fff;
+  color: var(--green);
+  transition: 0.5s;
+}
+.btn{
+  border-radius: 20px;
+  padding: 10px;
+}
+.btn.slid{
+  background-color: var(--green);
+  color: #fff;
+  margin-top: 10px;
+}
+.slider>button{
+  position: absolute;
+  color: rgb(43, 40, 40);
+  bottom:90px;
+  left: 50%;
+  width: 10%;
+  background-color: transparent;
+  color:var(--green);
+  display: flex;
+  font-size: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translate(-50%,-50%);
+  z-index: 7;
+}
+.btt{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: transparent;
+  z-index: 50;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.btt button{
+  background-color: transparent;
+  color: #a4c639;
+  font-size: 40px;
+  cursor: pointer;
+}
+/*************** section 1 **********/
+section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+section .top{
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--green);
+  color: #fff;
+}
+section .top button{
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+section .top button:hover{
+  background-color: #fff;
+  color: var(--green);
+}
+section .hed-section{
+  margin: 50px auto;
+  font-size: 30px;
+  text-align: center;
+}
+section .hed-section h1 span{
+  color: var(--green);
+}
+section .content{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+section .content .box{
+  padding: 10px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+section .content .box h2,p,button{
+  margin-top: 10px;
+}
+section .content .box button{
+  width: 50%;
+  background-color: var(--green);
+  color: #fff;
+}
+@media (max-width:870px){
+  section .content .box{
+    width: 20%;
+  }
+}
+@media (max-width:705px){
+  section .content .box{
+    width: 15%;
+  }
+  section .top{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+@media (max-width:540px){
+  section .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  section .content .box{
+    width: 70%;
+  }
+}
+/*************** section 2 **********/
+#slid2{
+  width: 100%;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+}
+#slid2 .left{
+  width: 40%;
+  color: #fff;
+}
+#slid2 .left p{
+  color: #fff;
+}
+#slid2 .left h1 span{
+  color: var(--green);
+}
+#slid2 .left button{
+  background-color: var(--green);
+  color: #fff;
+  transition: 0.3s;
+}
+#slid2 .left button:hover{
+  background-color: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  cursor: pointer;
+}
+#slid2 .right{
+  width: 40%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 45% 45%;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+#slid2 .right .ticket{
+  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  padding: 10px;
+}
+#slid2 .right .ticket span{
+  color: var(--green);
+}
+@media (max-width:800px){
+  #slid2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #slid2 .left{
+    width: 80%;
+    text-align: center;
+  }
+  #slid2 .right{
+    width: 80%;
+    margin-top: 10px;
+  }
+}
+@media (max-width:444px){
+
+  #slid2 .right{
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*************** section 3 **********/
+#section3{
+  display: flex;
+  flex-direction: row;
+  padding:20px ;
+
+}
+#section3 img{
+  width: 50%;
+}
+
+#section3 .left{
+  width: 40%;
+  color:var(--black);
+}
+#section3 .left p{
+  color:var(--gray);
+}
+#section3 .left h1 span{
+  color: var(--green);
+}
+#section3 .left button{
+  background-color: var(--green);
+  color: #fff;
+  transition: 0.3s;
+}
+#section3 .left button:hover{
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--green);
+  cursor: pointer;
+}
+@media (max-width:670px){
+
+  #section3{
+    display: flex;
+    flex-direction: column;
+  }
+  #section3 img{
+    width: 80%;
+  }
+  #section3 .left{
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+/*************** section 4 **********/
+#section4{
+  display: flex;
+  flex-direction: column;
+}
+#section4 .content{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  overflow-x: scroll;
+  cursor:grab;
+  
+}
+#section4 .content::-webkit-scrollbar{
+  background-color: #232323;
+  width: 100%;
+}
+#section4 .content .one{
+  width: 500px;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+#section4 .content .one h3{
+  color: var(--green);
+  margin-top: 5px;
+}
+/*************** section 4 **********/
+#sectoin5{
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+}
+#sectoin5 .content{
+  background-color: var(--green);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-radius: 20px;
+}
+#sectoin5 .content form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#sectoin5 .content form input{
+  height: 50px;
+  border-radius: 10px;
+  padding: 10px;
+}
+#sectoin5 .content input{
+  height: 100px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+#sectoin5 .content button{
+  width: 20%;
+}
+#sectoin5 .content button:hover{
+  background-color: transparent;
+  color: #1e1e1e;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+@media (max-width:720px){
+  #sectoin5 .content form{
+    display: flex;
+    flex-direction: column;
+  }
+  #sectoin5 .content input{
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+}
+/*************** footer **********/
+footer{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--black);
+  padding: 20px;
+}
+footer .one{
+display: flex;
+flex-direction: row;
+}
+footer .one ul{
+  width: 30%;
+  color: #fff;
+}
+footer .one ul input{
+  border-radius: 10px;
+  height: 20px;
+  padding: 10px;
+  margin-top: 10px;
+}
+footer .tow{
+  margin-top: 20px;
+  color: #666666;
+}
+@media (max-width:730px){
+  footer .one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+  }
+  footer .one ul{
+   width: 100%;
+  }
+}
